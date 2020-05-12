@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Introduction"></activity>
+        <activity android:name=".GroceryStore"></activity>
+        <activity android:name=".Introduction" />
         <activity android:name=".Loading" />
         <activity android:name=".Settings" />
         <activity android:name=".ClothingStore" />
-        <activity android:name=".GroceryStore" />
         <activity android:name=".Airport" />
         <activity android:name=".Home" />
         <activity android:name=".Lobby" />

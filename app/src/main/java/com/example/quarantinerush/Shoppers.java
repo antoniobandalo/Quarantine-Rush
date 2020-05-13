@@ -4,10 +4,13 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import java.util.Random;
+
 public class Shoppers {
 
-    int x = 0, y, width, height, shopCounter = 1;
+    int x = 0, y, width, height, shopCounter = 1, random;
     Bitmap shopper1, shopper2, shopper3;
+    Random r;
 
     Shoppers (int screenY, Resources res) {
 
@@ -22,8 +25,11 @@ public class Shoppers {
         Bitmap.createScaledBitmap(shopper2, width, height, false);
         Bitmap.createScaledBitmap(shopper3, width, height, false);
 
+        Random r = new Random();
+        int random = r.nextInt(400 - 100) + 100;
+
         y = screenY / 2;
-        x = 200;
+        x = 1000 + random;
 
     }
 

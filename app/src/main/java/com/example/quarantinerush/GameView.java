@@ -15,6 +15,7 @@ public class GameView extends SurfaceView implements Runnable {
     private Paint paint;
     private MainCharacter mainChar;
     private Background background1, background2;
+    private Shoppers shopper;
     private int curYspeed;
 
     public GameView(Context context, int screenX, int screenY) {
@@ -33,6 +34,8 @@ public class GameView extends SurfaceView implements Runnable {
         background2.x = screenX;
 
         paint = new Paint();
+
+        shopper = new Shoppers(screenY, getResources());
 
     }
 
@@ -53,6 +56,14 @@ public class GameView extends SurfaceView implements Runnable {
 
         background1.x -= 12 * screenRatioX;
         background2.x -= 12 * screenRatioX;
+
+        shopper.x -=12;
+
+        if (shopper.x + shopper.width < 0){
+
+            shopper.getShopper();
+           shopper.x = screenX;
+        }
 
         if (background1.x + background1.background.getWidth() < 0) {
             background1.x = screenX;
@@ -87,6 +98,8 @@ public class GameView extends SurfaceView implements Runnable {
             canvas.drawBitmap(background2.background, background2.x, background2.y, paint);
 
             canvas.drawBitmap(mainChar.getMainChar(), mainChar.x, mainChar.y, paint);
+
+            canvas.drawBitmap(shopper.getShopper(), shopper.x, shopper.y, paint);
 
 
 

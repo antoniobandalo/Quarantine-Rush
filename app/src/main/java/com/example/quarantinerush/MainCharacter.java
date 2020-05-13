@@ -33,6 +33,7 @@ public class MainCharacter {
 
 
     Bitmap getMainChar () {
+
         return mainChar;
     }
 }

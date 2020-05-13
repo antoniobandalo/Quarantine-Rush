@@ -63,7 +63,7 @@ public class GameView extends SurfaceView implements Runnable {
         }
 
         if (mainChar.jump) {
-            curYspeed = -33;
+            curYspeed = -34;
             mainChar.jump = false;
         }
         else {
@@ -87,6 +87,8 @@ public class GameView extends SurfaceView implements Runnable {
             canvas.drawBitmap(background2.background, background2.x, background2.y, paint);
 
             canvas.drawBitmap(mainChar.getMainChar(), mainChar.x, mainChar.y, paint);
+
+
 
             getHolder().unlockCanvasAndPost(canvas);
         }
